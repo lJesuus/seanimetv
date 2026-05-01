@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Network Security Config for Seanime TV.
+    Allows cleartext (HTTP) traffic only to local/private network addresses
+    where the Seanime server typically runs. All other traffic requires HTTPS.
+-->
+<network-security-config>
+    <!-- Allow cleartext to common local network ranges -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">localhost</domain>
+        <domain includeSubdomains="true">127.0.0.1</domain>
+        <domain includeSubdomains="true">10.0.0.0</domain>
+        <!-- 192.168.x.x -->
+        <domain includeSubdomains="true">192.168.0.0</domain>
+        <!-- 172.16-31.x.x -->
+        <domain includeSubdomains="true">172.16.0.0</domain>
+    </domain-config>
+
+    <!-- Default: require HTTPS for everything else -->
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Seanime TV</string>
+
+    <!-- ServerUrlInputScreen -->
+    <string name="server_config_title">Configure Seanime Server</string>
+    <string name="server_url_label">Server URL</string>
+    <string name="server_url_placeholder">http://192.168.0.12:43211</string>
+    <string name="connect_button">Connect</string>
+</resources>
